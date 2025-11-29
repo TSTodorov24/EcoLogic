@@ -1,0 +1,183 @@
+/* Navigation Links */
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+nav a:hover {
+    color: #2aff9a;
+    text-shadow: 0 0 6px #2aff9a;
+}
+
+/* Main container */
+.container {
+    max-width: 1000px;
+    margin: 140px auto 50px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Main heading */
+h1 {
+    font-size: 48px;
+    color: #2aff9a;
+    text-shadow: 0 0 12px #2aff9a, 0 0 24px #2aff9a88;
+    margin-bottom: 40px;
+}
+
+/* Grid layout */
+.grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Card styles */
+.card {
+    background: rgba(10, 25, 20, 0.85);
+    border: 1px solid #2aff9a44;
+    border-radius: 16px;
+    padding: 25px;
+    text-align: left;
+    box-shadow: 0 0 15px #2aff9a55, 0 0 30px #2aff9a22 inset;
+    transition: 0.5s;
+    position: relative;
+    overflow: hidden;
+    flex: 1 1 260px; /* flexible width */
+    max-width: 300px;
+}
+
+/* Neon overlay on hover */
+.card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg, #2aff9a33, #07482a71, #2aff9a33);
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: 0.7s;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px #2aff9a99, 0 0 50px #2aff9a55 inset;
+    border-color: #2aff9a88;
+}
+
+/* Card headings */
+h2 {
+    font-size: 28px;
+    color: #00ffc3;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Highlight box */
+.highlight {
+    background: #001a13;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    box-shadow: 0 0 10px #2aff9a44 inset;
+    position: relative;
+    z-index: 2;
+}
+
+/* Price text */
+.price {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2aff9a;
+    text-shadow: 0 0 8px #2aff9a, 0 0 16px #2aff9a55;
+}
+
+/* Small text / notes */
+.small, .note {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: #001d15;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px dashed #2aff9a44;
+}
+
+th {
+    color: #2aff9a;
+    font-weight: 600;
+    text-shadow: 0 0 6px #2aff9a33;
+}
+
+td {
+    color: #fff;
+}
+
+/* Lists */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 6px;
+    position: relative;
+}
+
+ul li::before {
+    content: '➤';
+    color: #2aff9a;
+    margin-right: 6px;
+    position: absolute;
+    left: -20px;
+}
+
+/* Footer */
+footer {
+    padding: 40px 20px;
+    text-align: center;
+    background: #00120a;
+    color: #aaa;
+    font-size: 14px;
+    margin-top: 50px;
+}
+
+/* Responsive design */
+@media(max-width: 900px) {
+    .grid {
+        justify-content: center;
+        gap: 20px;
+    }
+    h1 { font-size: 36px; }
+    .card { max-width: 100%; }
+}
+
+@media(max-width: 480px) {
+    h1 { font-size: 28px; }
+    .container { margin: 120px 10px 50px; padding: 15px; }
+    nav a { font-size: 14px; margin-left: 10px; }
+}
