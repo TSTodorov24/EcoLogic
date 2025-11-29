@@ -1,43 +1,142 @@
-/* Navigation Links */
-nav a {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(160deg, #070b0a, #00110f);
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Header as Magic Frame */
+header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 22px;
+    overflow: hidden;
+    margin: 20px auto;
+    padding: 20px 50px;
+    max-width: 1000px;
+    background: rgba(10, 17, 15, 0.9);
+    box-shadow: 0 0 30px #00ffb322, inset 0 0 25px #00ffb311;
+    animation: framePulse 3s infinite ease-in-out;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: #2aff9a;
+    z-index: 2;
+}
+
+header nav a {
     margin-left: 25px;
     text-decoration: none;
     color: #fff;
     font-size: 18px;
     font-weight: 500;
     transition: 0.3s;
-}
-nav a:hover {
-    color: #2aff9a;
-    text-shadow: 0 0 6px #2aff9a;
+    z-index: 2;
 }
 
-/* Main container */
+header nav a:hover {
+    color: #2aff9a;
+    text-shadow: 0 0 8px #2aff9a;
+}
+
+/* Magic glow overlay for header */
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 22px;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 20% 10%, #2aff9a55 0%, transparent 45%),
+        radial-gradient(circle at 80% 90%, #00ffcc55 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, #00ffaa22 0%, transparent 65%);
+    mix-blend-mode: screen;
+    animation: glowDrift 6s infinite alternate ease-in-out;
+    opacity: 0.65;
+    z-index: 1;
+}
+
+@keyframes framePulse {
+    0% { box-shadow: 0 0 25px #00ffb322, inset 0 0 20px #00ffb311; }
+    50% { box-shadow: 0 0 40px #00ffb399, inset 0 0 35px #00ffb355; }
+    100% { box-shadow: 0 0 25px #00ffb322, inset 0 0 20px #00ffb311; }
+}
+
+@keyframes glowDrift {
+    0% { transform: translate(0px, 0px) rotate(0deg); }
+    50% { transform: translate(15px, -15px) rotate(3deg); }
+    100% { transform: translate(-10px, 10px) rotate(-2deg); }
+}
+
+/* Hero / Heading as Magic Frame */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 120px auto 60px;
+    padding: 20px;
+    max-width: 800px;
+    border-radius: 22px;
+    background: rgba(10, 17, 15, 0.9);
+    box-shadow: 0 0 30px #00ffb322, inset 0 0 25px #00ffb311;
+    position: relative;
+    animation: framePulse 3s infinite ease-in-out;
+}
+
+.hero h1 {
+    font-size: 60px;
+    color: #2aff9a;
+    text-shadow: 0 0 15px #2aff9a, 0 0 30px #2aff9a88;
+    z-index: 2;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 22px;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 20% 10%, #2aff9a55 0%, transparent 45%),
+        radial-gradient(circle at 80% 90%, #00ffcc55 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, #00ffaa22 0%, transparent 65%);
+    mix-blend-mode: screen;
+    animation: glowDrift 6s infinite alternate ease-in-out;
+    opacity: 0.65;
+    z-index: 1;
+}
+
 .container {
-    max-width: 1000px;
-    margin: 140px auto 50px;
+    max-width: 1200px;
+    margin: 50px auto 50px;
     padding: 20px;
     text-align: center;
 }
 
-/* Main heading */
-h1 {
-    font-size: 48px;
-    color: #2aff9a;
-    text-shadow: 0 0 12px #2aff9a, 0 0 24px #2aff9a88;
-    margin-bottom: 40px;
-}
-
-/* Grid layout */
 .grid {
     display: flex;
-    justify-content: space-around;
-    gap: 20px;
+    justify-content: center; /* center the cards */
+    gap: 15px;               /* smaller gap */
     flex-wrap: wrap;
+    align-items: flex-start;
 }
 
-/* Card styles */
 .card {
+    flex: 0 0 280px; /* all cards are 280px wide, do not grow/shrink */
+    max-width: 280px; /* ensures uniformity */
+    min-width: 280px; /* ensures uniformity */
     background: rgba(10, 25, 20, 0.85);
     border: 1px solid #2aff9a44;
     border-radius: 16px;
@@ -47,11 +146,9 @@ h1 {
     transition: 0.5s;
     position: relative;
     overflow: hidden;
-    flex: 1 1 260px; /* flexible width */
-    max-width: 300px;
 }
 
-/* Neon overlay on hover */
+
 .card::before {
     content: '';
     position: absolute;
@@ -77,7 +174,6 @@ h1 {
     border-color: #2aff9a88;
 }
 
-/* Card headings */
 h2 {
     font-size: 28px;
     color: #00ffc3;
@@ -86,7 +182,6 @@ h2 {
     z-index: 2;
 }
 
-/* Highlight box */
 .highlight {
     background: #001a13;
     padding: 15px;
@@ -97,7 +192,6 @@ h2 {
     z-index: 2;
 }
 
-/* Price text */
 .price {
     font-size: 32px;
     font-weight: 700;
@@ -105,13 +199,11 @@ h2 {
     text-shadow: 0 0 8px #2aff9a, 0 0 16px #2aff9a55;
 }
 
-/* Small text / notes */
 .small, .note {
     font-size: 14px;
     color: #ccc;
 }
 
-/* Table styling */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -137,7 +229,6 @@ td {
     color: #fff;
 }
 
-/* Lists */
 ul {
     list-style: none;
     padding-left: 0;
@@ -156,7 +247,6 @@ ul li::before {
     left: -20px;
 }
 
-/* Footer */
 footer {
     padding: 40px 20px;
     text-align: center;
@@ -166,18 +256,14 @@ footer {
     margin-top: 50px;
 }
 
-/* Responsive design */
 @media(max-width: 900px) {
-    .grid {
-        justify-content: center;
-        gap: 20px;
-    }
-    h1 { font-size: 36px; }
+    .hero h1 { font-size: 48px; }
     .card { max-width: 100%; }
+    nav a { font-size: 16px; margin-left: 15px; }
 }
 
 @media(max-width: 480px) {
-    h1 { font-size: 28px; }
+    .hero h1 { font-size: 36px; }
     .container { margin: 120px 10px 50px; padding: 15px; }
-    nav a { font-size: 14px; margin-left: 10px; }
+    nav { flex-direction: column; align-items: flex-start; gap: 10px; padding: 20px; }
 }
