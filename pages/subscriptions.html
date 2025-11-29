@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="bg">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="../logo/ecologic-bez-bg.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/subscriptions.css">
+    <script src="../js/subscriptions.js" defer></script>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title data-key="subs-title">Ценоразпис за зареждане</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo" data-key="logo">EcoLogic</div>
+
+        <nav>
+            <a href="/index.html" data-key="nav-home">Начало</a>
+            <a href="/pages/subscriptions.html" data-key="nav-subs">Абонаменти</a>
+            <a href="/pages/map.html" data-key="nav-map">Карта</a>
+            <a href="/pages/about.html" data-key="nav-about">За нас</a>
+            <a href="/pages/login.html" data-key="nav-login">Вход</a>
+
+            <select id="lang-switch" onchange="setLanguage(this.value)">
+                <option value="bg">BG</option>
+                <option value="en">EN</option>
+                <option value="ru">RU</option>
+                <option value="de">DE</option>
+            </select>
+
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <div class="grid">
+
+            <div class="card">
+                <h2 data-key="price-title">Тарифи</h2>
+                <p class="small" data-key="price-energy">Цена за енергия</p>
+
+                <div class="highlight">
+                    <div class="price" data-key="price-day">Дневна: 0.40 €/kWh</div>
+                    <div class="note" data-key="price-night">Нощна: 0.30 €/kWh</div>
+                </div>
+
+                <h3 data-key="extra-info-title">Допълнителна информация</h3>
+                <ul>
+                    <li data-key="extra-1">Цените са в евро (€).</li>
+                    <li data-key="extra-2">Тарифите важат за AC зарядни станции.</li>
+                    <li data-key="extra-3">Нощна тарифа важи от 22:00 до 06:00.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2 data-key="discount-title">Отстъпки по количество</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th data-key="visits">Посещения</th>
+                            <th data-key="discount">Отстъпка</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>10</td>
+                            <td>3%</td>
+                        </tr>
+                        <tr>
+                            <td>30</td>
+                            <td>5%</td>
+                        </tr>
+                        <tr>
+                            <td>50</td>
+                            <td>8%</td>
+                        </tr>
+                        <tr>
+                            <td>80</td>
+                            <td>10%</td>
+                        </tr>
+                        <tr>
+                            <td>100</td>
+                            <td>15%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="note" data-key="discount-info">Отстъпките се начисляват автоматично.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="ecologic-footer">
+
+        <div class="footer-top">
+            <div class="footer-col">
+                <h3 data-key="footer-title">EcoLogic</h3>
+                <p data-key="footer-desc">Устойчива мрежа от екологични зарядни станции, захранвани от соларна енергия.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4 data-key="footer-nav">Навигация</h4>
+                <a href="../index.html" data-key="nav-home">Начало</a>
+                <a href="../pages/subscriptions.html" data-key="nav-subs">Абонаменти</a>
+                <a href="../pages/map.html" data-key="nav-map">Карта</a>
+                <a href="../pages/about.html" data-key="nav-about">За нас</a>
+                <a href="../pages/login.html" data-key="nav-login">Вход</a>
+            </div>
+
+            <div class="footer-col">
+                <h4 data-key="footer-social">Социални мрежи</h4>
+                <div class="social-links">
+                    <a href="https://instagram.com" target="_blank">Instagram</a>
+                    <a href="https://facebook.com" target="_blank">Facebook</a>
+                    <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4 data-key="footer-legal">Правна информация</h4>
+                <a href="#" data-key="footer-privacy">Политика за поверителност</a>
+                <a href="#" data-key="footer-terms">Условия за ползване</a>
+                <a href="#" data-key="footer-cookies">Бисквитки</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p data-key="footer-copy">© 2025 EcoLogic — Всички права запазени.</p>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

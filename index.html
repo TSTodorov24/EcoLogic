@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoLogic – Начало</title>
+    <link rel="icon" href="logo/ecologic-bez-bg.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/homePage.css">
+    <script src="js/index.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo" data-key="logo">EcoLogic</div>
+
+        <nav>
+            <a href="index.html" data-key="nav-home">Начало</a>
+            <a href="pages/subscriptions.html" data-key="nav-subs">Абонаменти</a>
+            <a href="pages/map.html" data-key="nav-map">Карта</a>
+            <a href="pages/about.html" data-key="nav-about">За нас</a>
+            <a href="pages/login.html" data-key="nav-login">Вход</a>
+
+            <select id="lang-switch" onchange="setLanguage(this.value)">
+                <option value="bg">BG</option>
+                <option value="en">EN</option>
+                <option value="ru">RU</option>
+                <option value="de">DE</option>
+            </select>
+
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 data-key="hero-title">Добре дошли в EcoLogic</h1>
+            <p data-key="hero-text">Вашата зелена мрежа за електромобили в Бургас – достъпна 24/7, бързо, удобно и
+                интелигентно.</p>
+            <a href="pages/map.html" class="cta" data-key="hero-cta">Към картата</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <h2 data-key="feat-network-title">Нашата мрежа</h2>
+            <p data-key="feat-network-text">Предлагаме надеждни и бързи станции за зареждане на електромобили,
+                разположени удобно в целия град.</p>
+        </div>
+
+        <div class="feature">
+            <h2 data-key="feat-eco-title">Екологичен подход</h2>
+            <p data-key="feat-eco-text">Интегрираме възобновяема енергия, намаляваме въглеродните емисии и изграждаме
+                устойчива инфраструктура.</p>
+        </div>
+
+        <div class="feature">
+            <h2 data-key="feat-why-title">Защо EcoLogic?</h2>
+            <ul>
+                <li data-key="feat-why-1">Бързи и удобни зарядни станции</li>
+                <li data-key="feat-why-2">Екологично и устойчиво решение</li>
+                <li data-key="feat-why-3">Умно управление на енергията</li>
+                <li data-key="feat-why-4">Локации из целия Бургас</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="ecologic-footer">
+
+        <div class="footer-top">
+            <div class="footer-col">
+                <h3 data-key="footer-title">EcoLogic</h3>
+                <p data-key="footer-desc">Устойчива мрежа от екологични зарядни станции, захранвани от соларна енергия.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4 data-key="footer-nav">Навигация</h4>
+                <a href="index.html" data-key="nav-home">Начало</a>
+                <a href="pages/subscriptions.html" data-key="nav-subs">Абонаменти</a>
+                <a href="pages/map.html" data-key="nav-map">Карта</a>
+                <a href="pages/about.html" data-key="nav-about">За нас</a>
+                <a href="pages/login.html" data-key="nav-login">Вход</a>
+            </div>
+
+            <div class="footer-col">
+                <h4 data-key="footer-social">Социални мрежи</h4>
+                <div class="social-links">
+                    <a href="https://instagram.com" target="_blank">Instagram</a>
+                    <a href="https://facebook.com" target="_blank">Facebook</a>
+                    <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4 data-key="footer-legal">Правна информация</h4>
+                <a href="#" data-key="footer-privacy">Политика за поверителност</a>
+                <a href="#" data-key="footer-terms">Условия за ползване</a>
+                <a href="#" data-key="footer-cookies">Бисквитки</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p data-key="footer-copy">© 2025 EcoLogic — Всички права запазени.</p>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

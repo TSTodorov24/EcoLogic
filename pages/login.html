@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <title>EcoLogic – Вход</title>
+    <link rel="stylesheet" href="/styles/style-register.css">
+    
+</head>
+
+<body>
+
+    <div class="card">
+        <h1>Вход</h1>
+
+        <input id="log-email" type="email" placeholder="Имейл">
+        <input id="log-pass" type="password" placeholder="Парола">
+
+        <button onclick="login()">Влез</button>
+
+        <p class="switch">Нямаш акаунт? <a href="registration.html">Регистрирай се</a></p>
+    </div>
+
+    <script>
+        function login() {
+            const email = document.getElementById("log-email").value;
+            const pass = document.getElementById("log-pass").value;
+
+            const user = JSON.parse(localStorage.getItem("ecologic-user"));
+
+            if (!user || user.email !== email || user.pass !== pass) {
+                return alert("Грешни данни.");
+            }
+
+            window.location.href = "dashboard.html";
+        }
+    </script>
+
+</body>
+
+</html>

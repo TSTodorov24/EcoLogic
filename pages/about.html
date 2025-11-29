@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <title data-key="about-title">EcoLogic – За нас</title>
+
+    <link rel="icon" href="../logo/ecologic-bez-bg.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/about.css">
+    <script src="../js/about.js" defer></script>
+
+    <style>
+        #lang-switch,
+        #theme-toggle {
+            margin-left: 15px;
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: none;
+            background: #2aff9a;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo" data-key="logo">EcoLogic</div>
+
+        <nav>
+            <a href="/index.html" data-key="nav-home">Начало</a>
+            <a href="/pages/subscriptions.html" data-key="nav-subs">Абонаменти</a>
+            <a href="/pages/map.html" data-key="nav-map">Карта</a>
+            <a href="/pages/about.html" data-key="nav-about">За нас</a>
+            <a href="/pages/login.html" data-key="nav-login">Вход</a>
+
+            <select id="lang-switch" onchange="setLanguage(this.value)">
+                <option value="bg">BG</option>
+                <option value="en">EN</option>
+                <option value="ru">RU</option>
+                <option value="de">DE</option>
+            </select>
+
+        </nav>
+    </header>
+
+    <section class="page">
+        <h2 data-key="about-title">За нас</h2>
+
+        <p data-key="about-text">
+            EcoLogic е визия за бъдеще с чиста енергия и устойчив транспорт.
+        </p>
+
+        <div class="team-container">
+
+            <div class="team-card">
+                <img src="../img/team/bor.jpg" alt="Borislav">
+                <span class="name">Борислав Андриков</span>
+            </div>
+
+            <div class="team-card">
+                <img src="../img/team/vas.jpg" alt="Vasilen">
+                <span class="name">Василен Господинов</span>
+            </div>
+
+            <div class="team-card">
+                <img src="../img/team/teo.png" alt="Teodor">
+                <span class="name">Теодор Тодоров</span>
+            </div>
+
+            <div class="team-card">
+                <img src="../img/team/sasha.jpg" alt="Sasha">
+                <span class="name">Олександра Кикавська</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer class="ecologic-footer">
+
+        <div class="footer-top">
+            <div class="footer-col">
+                <h3 data-key="footer-title">EcoLogic</h3>
+                <p data-key="footer-desc">
+                    Устойчива мрежа от екологични зарядни станции, захранвани от соларна енергия.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4 data-key="footer-nav">Навигация</h4>
+                <a href="../index.html" data-key="nav-home">Начало</a>
+                <a href="../pages/subscriptions.html" data-key="nav-subs">Абонаменти</a>
+                <a href="../pages/map.html" data-key="nav-map">Карта</a>
+                <a href="../pages/about.html" data-key="nav-about">За нас</a>
+                <a href="../pages/login.html" data-key="nav-login">Вход</a>
+            </div>
+
+            <div class="footer-col">
+                <h4 data-key="footer-social">Социални мрежи</h4>
+                <div class="social-links">
+                    <a href="https://instagram.com" target="_blank">Instagram</a>
+                    <a href="https://facebook.com" target="_blank">Facebook</a>
+                    <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4 data-key="footer-legal">Правна информация</h4>
+                <a href="#" data-key="footer-privacy">Политика за поверителност</a>
+                <a href="#" data-key="footer-terms">Условия за ползване</a>
+                <a href="#" data-key="footer-cookies">Бисквитки</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p data-key="footer-copy">© 2025 EcoLogic — Всички права запазени.</p>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
