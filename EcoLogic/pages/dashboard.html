@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <title>EcoLogic – Профил</title>
+    <link rel="stylesheet" href="/styles/style-dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="js/lang-theme.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h2 id="username"></h2>
+
+        <nav>
+            <a href="/index.html">Начало</a>
+            <a href="/pages/subscriptions.html">Абонаменти</a>
+            <a href="/pages/map.html">Карта</a>
+            <a href="/pages/about.html">За нас</a>
+        </nav>
+
+        <button class="logout" onclick="logout()">Изход</button>
+    </header>
+
+    <div class="container">
+        <div class="qr-box">
+            <h3 id="welcome"></h3>
+            <h4>Вашият QR код</h4>
+            <canvas id="qr"></canvas>
+            <p id="renew-info"></p>
+        </div>
+    </div>
+
+    <script>
+        const user = JSON.parse(localStorage.getItem("ecologic-user"));
+        if (!user) window.location.href = "login.html";
+
+        document.getElementById("username").innerText = user.name;
+        document.getElementById("welcome").innerText = "Добре дошли, " + user.name;
+
+        const now = Date.now();
+        const twoMonths = 60 * 24 * 60 * 60 * 1000;
+
+        if (now - user.qrCreated > twoMonths) {
+            user.qrCreated = now;
+            user.qrCode = Math.random().toString(36).substring(2);
+            localStorage.setItem("ecologic-user", JSON.stringify(user));
+        }
+
+        document.getElementById("renew-info").innerText = "QR кодът се подновява автоматично на всеки 60 дни.";
+
+        QRCode.toCanvas(document.getElementById("qr"), user.qrCode);
+
+        function logout() {
+            window.location.href = "../index.html";
+        }
+    </script>
+
+    <footer class="ecologic-footer">
+
+        <div class="footer-top">
+            <div class="footer-col">
+                <h3>EcoLogic</h3>
+                <p>Устойчива мрежа от екологични зарядни станции, захранвани от соларна енергия.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Навигация</h4>
+                <a href="../index.html">Начало</a>
+                <a href="../pages/subscriptions.html">Абонаменти</a>
+                <a href="../pages/map.html">Карта</a>
+                <a href="../pages/about.html">За нас</a>
+                <a href="../pages/login.html">Вход</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Социални мрежи</h4>
+                <div class="social-links">
+                    <a href="https://instagram.com" target="_blank">Instagram</a>
+                    <a href="https://facebook.com" target="_blank">Facebook</a>
+                    <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Правна информация</h4>
+                <a href="#">Политика за поверителност</a>
+                <a href="#">Условия за ползване</a>
+                <a href="#">Бисквитки</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 EcoLogic — Всички права запазени.</p>
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

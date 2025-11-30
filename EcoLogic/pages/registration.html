@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <title>EcoLogic – Регистрация</title>
+    <link rel="stylesheet" href="/styles/style-register.css">
+</head>
+
+<body>
+
+    <div class="card">
+        <h1>EcoLogic</h1>
+        <p class="subtitle">Създай своя акаунт</p>
+
+        <input id="reg-name" type="text" placeholder="Вашето име">
+        <input id="reg-email" type="email" placeholder="Имейл">
+        <input id="reg-pass" type="password" placeholder="Парола">
+        <script src="js/lang-theme.js" defer></script>
+        <button onclick="register()">Регистрирай се</button>
+
+        <p class="switch">Вече имаш акаунт? <a href="login.html">Влез</a></p>
+    </div>
+
+    <script>
+        function register() {
+            const name = document.getElementById("reg-name").value;
+            const email = document.getElementById("reg-email").value;
+            const pass = document.getElementById("reg-pass").value;
+
+            if (!name || !email || !pass) return alert("Попълни всичко.");
+
+            const user = {
+                name,
+                email,
+                pass,
+                qrCreated: Date.now(),
+                qrCode: Math.random().toString(36).substring(2)
+            };
+
+            localStorage.setItem("ecologic-user", JSON.stringify(user));
+
+            window.location.href = "dashboard.html";
+        }
+    </script>
+
+</body>
+
+</html>
